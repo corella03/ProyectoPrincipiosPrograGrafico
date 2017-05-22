@@ -5,6 +5,7 @@
  */
 //Paquete
 package Logic;
+import Interface.LoginWindow;
 /**
  **
  ** @author Luis Alonso Corella Chaves
@@ -16,5 +17,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        LoginWindow login =  new LoginWindow();
+        login.setVisible(true);
     }  
 }

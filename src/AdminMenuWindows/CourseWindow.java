@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//Package
-package AdminMenuWindow;
+//Paquete
+package AdminMenuWindows;
 //Imports
 import Interface.AdministrativeWindow;
 /**
@@ -12,11 +12,11 @@ import Interface.AdministrativeWindow;
  ** @author Luis Alonso Corella Chaves
  ** @date 2017-05-21 Domingo
  **/
-public class ClassroomWindow extends javax.swing.JFrame {
+public class CourseWindow extends javax.swing.JFrame {
     /**
-     * Creates new form ClassroomWindow
+     * Creates new form CourseWindow
      */
-    public ClassroomWindow() {
+    public CourseWindow() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -29,6 +29,7 @@ public class ClassroomWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         returnAdmin = new javax.swing.JMenu();
@@ -36,7 +37,24 @@ public class ClassroomWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setText("Opciones de Aula");
+        jLabel2.setText("Opciones de Cursos");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(171, 171, 171)
+                .addComponent(jLabel2)
+                .addContainerGap(170, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addContainerGap(360, Short.MAX_VALUE))
+        );
 
         returnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
         returnAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -52,17 +70,11 @@ public class ClassroomWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
-                .addContainerGap(360, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -90,25 +102,26 @@ public class ClassroomWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClassroomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClassroomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClassroomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClassroomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClassroomWindow().setVisible(true);
+                new CourseWindow().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu returnAdmin;
     // End of variables declaration//GEN-END:variables
 }

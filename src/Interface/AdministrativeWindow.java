@@ -6,13 +6,13 @@
 //Package
 package Interface;
 //Imports
-import AdminMenuWindow.StudentWindow;
-import AdminMenuWindow.ProfessorWindow;
-import AdminMenuWindow.CareerWindow;
-import AdminMenuWindow.CourseWindow;
-import AdminMenuWindow.CampusWindow;
-import AdminMenuWindow.ClassroomWindow;
-import AdminMenuWindow.ScheduleWindow;
+import AdminMenuWindows.StudentWindow;
+import AdminMenuWindows.ProfessorWindow;
+import AdminMenuWindows.CareerWindow;
+import AdminMenuWindows.CourseWindow;
+import AdminMenuWindows.CampusWindow;
+import AdminMenuWindows.ClassroomWindow;
+import AdminMenuWindows.ScheduleWindow;
 /**
  **
  ** @author Luis Alonso Corella Chaves
@@ -206,11 +206,11 @@ public class AdministrativeWindow extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addComponent(scheduleButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
-                .addGap(19, 19, 19))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         returnSystem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
@@ -244,7 +244,7 @@ public class AdministrativeWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_classroomButtonActionPerformed
 
     private void studentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentButtonActionPerformed
-        StudentWindow student =  new StudentWindow();
+        StudentWindow student = new StudentWindow();
         student.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_studentButtonActionPerformed

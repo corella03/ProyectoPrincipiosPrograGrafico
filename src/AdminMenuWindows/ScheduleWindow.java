@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//Paquete
-package AdminMenuWindow;
+//Package
+package AdminMenuWindows;
 //Imports
 import Interface.AdministrativeWindow;
 /**
@@ -12,11 +12,11 @@ import Interface.AdministrativeWindow;
  ** @author Luis Alonso Corella Chaves
  ** @date 2017-05-21 Domingo
  **/
-public class StudentWindow extends javax.swing.JFrame {
+public class ScheduleWindow extends javax.swing.JFrame {
     /**
-     * Creates new form StudentWindow
+     * Creates new form ScheduleWindow
      */
-    public StudentWindow() {
+    public ScheduleWindow() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -30,29 +30,29 @@ public class StudentWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         returnAdmin = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Opciones de Estudiantes");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setText("Opciones de Horario");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(jLabel1)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addGap(167, 167, 167)
+                .addComponent(jLabel2)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addComponent(jLabel2)
                 .addContainerGap(360, Short.MAX_VALUE))
         );
 
@@ -102,24 +102,24 @@ public class StudentWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScheduleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScheduleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScheduleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ScheduleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentWindow().setVisible(true);
+                new ScheduleWindow().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu returnAdmin;

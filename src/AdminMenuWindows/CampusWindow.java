@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//Paquete
-package AdminMenuWindow;
+//Package
+package AdminMenuWindows;
 //Imports
 import Interface.AdministrativeWindow;
 /**
@@ -12,11 +12,11 @@ import Interface.AdministrativeWindow;
  ** @author Luis Alonso Corella Chaves
  ** @date 2017-05-21 Domingo
  **/
-public class CareerWindow extends javax.swing.JFrame {
+public class CampusWindow extends javax.swing.JFrame {
     /**
-     * Creates new form CareerWindow
+     * Creates new form CampusWindow
      */
-    public CareerWindow() {
+    public CampusWindow() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -37,16 +37,16 @@ public class CareerWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setText("Opciones de Carrera");
+        jLabel2.setText("Opciones de Recintos");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(166, 166, 166)
+                .addGap(161, 161, 161)
                 .addComponent(jLabel2)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,19 +102,19 @@ public class CareerWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CareerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CampusWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CareerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CampusWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CareerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CampusWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CareerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CampusWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CareerWindow().setVisible(true);
+                new CampusWindow().setVisible(true);
             }
         });
     }

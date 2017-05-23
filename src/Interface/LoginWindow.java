@@ -117,8 +117,8 @@ public class LoginWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_userEntryActionPerformed
 
     private void registryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registryButtonActionPerformed
-        final String Id = "karlonso";
-        final String password = "karlita";
+        final String Id = "core";
+        final String password = "123";
         if (Id.equals(userEntry.getText()) && password.equals(passwordEntry.getText()))
         {
             SystemMenu system = new SystemMenu();

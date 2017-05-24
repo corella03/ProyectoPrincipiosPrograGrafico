@@ -9,6 +9,7 @@ package AdminMenuWindows;
 import Interface.AdministrativeWindow;
 import StudentOptionsWindows.StudentRegistryWindow;
 import StudentOptionsWindows.StudentListWindow;
+import StudentOptionsWindows.StudentDeleteWindow;
 /**
  **
  ** @author Luis Alonso Corella Chaves
@@ -57,6 +58,11 @@ public class StudentWindow extends javax.swing.JFrame {
         });
 
         deleteStudentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar-usuarios-icono-5461-48.png"))); // NOI18N
+        deleteStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStudentButtonActionPerformed(evt);
+            }
+        });
 
         showStudentListButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/control-de-lista-de-tareas-icono-6927-48.png"))); // NOI18N
         showStudentListButton.setToolTipText("");
@@ -116,7 +122,7 @@ public class StudentWindow extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jLabel1)
-                .addGap(64, 64, 64)
+                .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addStudentButton)
                     .addComponent(deleteStudentButton))
@@ -132,7 +138,7 @@ public class StudentWindow extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         returnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
@@ -163,6 +169,7 @@ public class StudentWindow extends javax.swing.JFrame {
         AdministrativeWindow admin = new AdministrativeWindow();
         admin.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_returnAdminMouseClicked
 
     private void addStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentButtonActionPerformed
@@ -176,6 +183,12 @@ public class StudentWindow extends javax.swing.JFrame {
         list.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_showStudentListButtonActionPerformed
+
+    private void deleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentButtonActionPerformed
+        StudentDeleteWindow delete = new StudentDeleteWindow();
+        delete.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_deleteStudentButtonActionPerformed
     /**
      * @param args the command line arguments
      */

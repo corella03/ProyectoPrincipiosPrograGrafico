@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/Interface/LoginWindow.java</file>
-            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/Interface/SystemMenu.java</file>
-            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/Interface/AdministrativeWindow.java</file>
+            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/ProfessorOptionsWindows/ProfessorRegistryWindow.java</file>
+            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/AdminMenuWindows/ProfessorWindow.java</file>
+            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/ProfessorOptionsWindows/ProfessorDeleteWindow.java</file>
+            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/StudentOptionsWindows/StudentRegistryWindow.java</file>
+            <file>file:/C:/Users/luisalonso/Documents/Proyectos%20UTN/ProyectoPrincipiosPrograGrafico/src/StudentOptionsWindows/StudentDeleteWindow.java</file>
         </group>
     </open-files>
 </project-private>

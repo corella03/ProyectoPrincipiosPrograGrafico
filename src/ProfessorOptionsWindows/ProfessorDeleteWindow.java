@@ -4,37 +4,38 @@
  * and open the template in the editor.
  */
 //Package
-package StudentOptionsWindows;
+package ProfessorOptionsWindows;
 //Imports
-import AdminMenuWindows.StudentWindow;
+import AdminMenuWindows.ProfessorWindow;
+import static ProfessorOptionsWindows.ProfessorRegistryWindow.ProfessorList;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.table.DefaultTableModel;
-import static StudentOptionsWindows.StudentRegistryWindow.StudentList;
 /**
  **
  ** @author Luis Alonso Corella Chaves
  ** @date 2017-05-23 Martes
  **/
-public class StudentListWindow extends javax.swing.JFrame {
+public class ProfessorDeleteWindow extends javax.swing.JFrame {
     /**
-     * Creates new form StudentListWindow
+     * Creates new form ProfessorDeleteWindows
      */
-    public StudentListWindow() {
+    String names = "";
+    public ProfessorDeleteWindow() {
         initComponents();
         setLocationRelativeTo(null);
-        studentListTable.addMouseListener(new MouseAdapter() 
+        professorListTable.addMouseListener(new MouseAdapter() 
         {
             DefaultTableModel model = new DefaultTableModel();
             public void mouseClicked(MouseEvent e) 
             {
-                int i = studentListTable.getSelectedRow();
-                String names = (studentListTable.getValueAt(i, 0).toString());
-                String lastNames = (studentListTable.getValueAt(i, 1).toString());
-                String ids = (studentListTable.getValueAt(i, 2).toString());
-                String address = (studentListTable.getValueAt(i, 3).toString());
-                String phones = (studentListTable.getValueAt(i, 4).toString());
-                String emails = (studentListTable.getValueAt(i, 5).toString());
+                int i = professorListTable.getSelectedRow();
+                names = (professorListTable.getValueAt(i, 0).toString());
+                String lastNames = (professorListTable.getValueAt(i, 1).toString());
+                String ids = (professorListTable.getValueAt(i, 2).toString());
+                String address = (professorListTable.getValueAt(i, 3).toString());
+                String phones = (professorListTable.getValueAt(i, 4).toString());
+                String emails = (professorListTable.getValueAt(i, 5).toString());
             }  
         });
         shows();
@@ -51,16 +52,16 @@ public class StudentListWindow extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        studentListTable = new javax.swing.JTable();
+        professorListTable = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
-        returnStudent = new javax.swing.JMenu();
+        returnProfessor = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setText("Lista de Estudiantes");
+        jLabel11.setText("Lista de Profesores");
 
-        studentListTable.setModel(new javax.swing.table.DefaultTableModel(
+        professorListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -68,7 +69,7 @@ public class StudentListWindow extends javax.swing.JFrame {
                 "Nombre", "Apellido", "Cédula", "Dirección", "Teléfono", "Email"
             }
         ));
-        jScrollPane2.setViewportView(studentListTable);
+        jScrollPane2.setViewportView(professorListTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -77,25 +78,26 @@ public class StudentListWindow extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+                .addContainerGap(185, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addGap(94, 94, 94))
         );
 
-        returnStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
-        returnStudent.addMouseListener(new java.awt.event.MouseAdapter() {
+        returnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
+        returnProfessor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                returnStudentMouseClicked(evt);
+                returnProfessorMouseClicked(evt);
             }
         });
-        jMenuBar1.add(returnStudent);
+        jMenuBar1.add(returnProfessor);
 
         setJMenuBar(jMenuBar1);
 
@@ -103,32 +105,31 @@ public class StudentListWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void returnStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnStudentMouseClicked
-        StudentWindow student = new StudentWindow();
-        student.setVisible(true);
+    private void returnProfessorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnProfessorMouseClicked
+        ProfessorWindow professor = new ProfessorWindow();
+        professor.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_returnStudentMouseClicked
+    }//GEN-LAST:event_returnProfessorMouseClicked
     public  void shows() {
-        String tableList[][] = new String[StudentList.size()][6];
-        for (int i = 0; i < StudentList.size(); i++) {
-            tableList[i][0] = StudentList.get(i).getName();
-            tableList[i][1] = StudentList.get(i).getLastName();
-            tableList[i][2] = StudentList.get(i).getIdentificationCard();
-            tableList[i][3] = StudentList.get(i).getAddress();
-            tableList[i][4] = StudentList.get(i).getTelephoneNumber();
-            tableList[i][5] = StudentList.get(i).getEmail();
+        String tableList[][] = new String[ProfessorList.size()][6];
+        for (int i = 0; i < ProfessorList.size(); i++) {
+            tableList[i][0] = ProfessorList.get(i).getName();
+            tableList[i][1] = ProfessorList.get(i).getLastName();
+            tableList[i][2] = ProfessorList.get(i).getIdentificationCard();
+            tableList[i][3] = ProfessorList.get(i).getAddress();
+            tableList[i][4] = ProfessorList.get(i).getTelephoneNumber();
+            tableList[i][5] = ProfessorList.get(i).getEmail();
         }
-        studentListTable.setModel(new javax.swing.table.DefaultTableModel(
+        professorListTable.setModel(new javax.swing.table.DefaultTableModel(
                 tableList,
                 new String[]{
                     "Nombre", "Apellido", "Cédula", "Dirección", "Teléfono", "Email"
@@ -152,19 +153,20 @@ public class StudentListWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfessorDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentListWindow().setVisible(true);
+                new ProfessorDeleteWindow().setVisible(true);
             }
         });
     }
@@ -173,7 +175,7 @@ public class StudentListWindow extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JMenu returnStudent;
-    private javax.swing.JTable studentListTable;
+    private javax.swing.JTable professorListTable;
+    private javax.swing.JMenu returnProfessor;
     // End of variables declaration//GEN-END:variables
 }

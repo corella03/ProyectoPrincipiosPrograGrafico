@@ -10,9 +10,9 @@ package Logic;
  ** @author Luis Alonso Corella Chaves
  ** @date 2017-05-23 Martes
  **/
-public class Student extends Person{ 
-    public Student(String name, String lastName, String identificationCard, String address, 
-            String telephoneNumber, String email) 
+public class Professor extends Person{
+    public Professor(String name, String lastName, String identificationCard, 
+            String address, String telephoneNumber, String email) 
     {
         super(name, lastName, identificationCard, address, telephoneNumber, email);
     }

@@ -7,20 +7,21 @@
 package StudentOptionsWindows;
 //Imports
 import AdminMenuWindows.StudentWindow;
+import static StudentOptionsWindows.StudentRegistryWindow.StudentList;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.table.DefaultTableModel;
-import static StudentOptionsWindows.StudentRegistryWindow.StudentList;
 /**
  **
  ** @author Luis Alonso Corella Chaves
  ** @date 2017-05-23 Martes
  **/
-public class StudentListWindow extends javax.swing.JFrame {
+public class StudentDeleteWindow extends javax.swing.JFrame {
+    String names = "";
     /**
-     * Creates new form StudentListWindow
+     * Creates new form StudentDeleteWindow
      */
-    public StudentListWindow() {
+    public StudentDeleteWindow() {
         initComponents();
         setLocationRelativeTo(null);
         studentListTable.addMouseListener(new MouseAdapter() 
@@ -29,7 +30,7 @@ public class StudentListWindow extends javax.swing.JFrame {
             public void mouseClicked(MouseEvent e) 
             {
                 int i = studentListTable.getSelectedRow();
-                String names = (studentListTable.getValueAt(i, 0).toString());
+                names = (studentListTable.getValueAt(i, 0).toString());
                 String lastNames = (studentListTable.getValueAt(i, 1).toString());
                 String ids = (studentListTable.getValueAt(i, 2).toString());
                 String address = (studentListTable.getValueAt(i, 3).toString());
@@ -52,6 +53,7 @@ public class StudentListWindow extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         studentListTable = new javax.swing.JTable();
+        deleteStudentButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         returnStudent = new javax.swing.JMenu();
 
@@ -70,23 +72,37 @@ public class StudentListWindow extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(studentListTable);
 
+        deleteStudentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar-usuarios-icono-5461-48.png"))); // NOI18N
+        deleteStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStudentButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(185, 185, 185)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(208, 208, 208)
+                .addComponent(deleteStudentButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deleteStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
 
         returnStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
@@ -103,21 +119,31 @@ public class StudentListWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
     private void returnStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnStudentMouseClicked
         StudentWindow student = new StudentWindow();
         student.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_returnStudentMouseClicked
+
+    private void deleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentButtonActionPerformed
+        for (int i = 0; i < StudentList.size(); i++) 
+        {
+            if (names == StudentList.get(i).getName())
+            {
+                StudentList.remove(i);
+            }
+            shows();
+        }
+    }//GEN-LAST:event_deleteStudentButtonActionPerformed
     public  void shows() {
         String tableList[][] = new String[StudentList.size()][6];
         for (int i = 0; i < StudentList.size(); i++) {
@@ -152,23 +178,24 @@ public class StudentListWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StudentListWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentDeleteWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentListWindow().setVisible(true);
+                new StudentDeleteWindow().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteStudentButton;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;

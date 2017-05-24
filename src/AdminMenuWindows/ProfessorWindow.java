@@ -7,6 +7,9 @@
 package AdminMenuWindows;
 //Imports
 import Interface.AdministrativeWindow;
+import ProfessorOptionsWindows.ProfessorRegistryWindow;
+import ProfessorOptionsWindows.ProfessorListWindow;
+import ProfessorOptionsWindows.ProfessorDeleteWindow;
 /**
  **
  ** @author Luis Alonso Corella Chaves
@@ -32,6 +35,14 @@ public class ProfessorWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        addStudentButton = new javax.swing.JButton();
+        deleteStudentButton = new javax.swing.JButton();
+        modifyStudentButton = new javax.swing.JButton();
+        showStudentListButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         returnAdmin = new javax.swing.JMenu();
 
@@ -43,21 +54,99 @@ public class ProfessorWindow extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Opciones de Profesores");
 
+        addStudentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/agregar-usuarios-icono-3782-48.png"))); // NOI18N
+        addStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addStudentButtonActionPerformed(evt);
+            }
+        });
+
+        deleteStudentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar-usuarios-icono-5461-48.png"))); // NOI18N
+        deleteStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStudentButtonActionPerformed(evt);
+            }
+        });
+
+        modifyStudentButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/usuarios-de-la-edicion-icono-7708-48.png"))); // NOI18N
+
+        showStudentListButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/control-de-lista-de-tareas-icono-6927-48.png"))); // NOI18N
+        showStudentListButton.setToolTipText("");
+        showStudentListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showStudentListButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setText("Agregar Profesores");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("Eliminar Profesores");
+
+        jLabel5.setText("Modificar Profesores");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("Lista Profesores");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jLabel2)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGap(145, 145, 145)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(addStudentButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(deleteStudentButton))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(modifyStudentButton)
+                                .addGap(98, 98, 98)
+                                .addComponent(showStudentListButton)))
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(179, 179, 179)
+                                .addComponent(jLabel6)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(136, 136, 136)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel4)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel2)
-                .addContainerGap(360, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deleteStudentButton)
+                    .addComponent(addStudentButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(modifyStudentButton)
+                    .addComponent(showStudentListButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         returnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
@@ -89,6 +178,24 @@ public class ProfessorWindow extends javax.swing.JFrame {
         admin.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_returnAdminMouseClicked
+
+    private void addStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentButtonActionPerformed
+        ProfessorRegistryWindow registry = new ProfessorRegistryWindow();
+        registry.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_addStudentButtonActionPerformed
+
+    private void deleteStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStudentButtonActionPerformed
+        ProfessorDeleteWindow delete = new ProfessorDeleteWindow();
+        delete.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_deleteStudentButtonActionPerformed
+
+    private void showStudentListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showStudentListButtonActionPerformed
+        ProfessorListWindow list = new ProfessorListWindow();
+        list.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_showStudentListButtonActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -123,10 +230,18 @@ public class ProfessorWindow extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addStudentButton;
+    private javax.swing.JButton deleteStudentButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton modifyStudentButton;
     private javax.swing.JMenu returnAdmin;
+    private javax.swing.JButton showStudentListButton;
     // End of variables declaration//GEN-END:variables
 }

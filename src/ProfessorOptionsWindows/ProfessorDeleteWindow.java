@@ -53,6 +53,7 @@ public class ProfessorDeleteWindow extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         professorListTable = new javax.swing.JTable();
+        deleteProfessorButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         returnProfessor = new javax.swing.JMenu();
 
@@ -71,24 +72,38 @@ public class ProfessorDeleteWindow extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(professorListTable);
 
+        deleteProfessorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar-usuarios-icono-5461-48.png"))); // NOI18N
+        deleteProfessorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteProfessorButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(185, 185, 185)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(deleteProfessorButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                .addGap(94, 94, 94))
+                .addComponent(deleteProfessorButton)
+                .addGap(53, 53, 53))
         );
 
         returnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
@@ -119,6 +134,16 @@ public class ProfessorDeleteWindow extends javax.swing.JFrame {
         professor.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_returnProfessorMouseClicked
+    private void deleteProfessorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProfessorButtonActionPerformed
+        for (int i = 0; i < ProfessorList.size(); i++) 
+        {
+            if (names == ProfessorList.get(i).getName())
+            {
+                ProfessorList.remove(i);
+            }
+            shows();
+        }
+    }//GEN-LAST:event_deleteProfessorButtonActionPerformed
     public  void shows() {
         String tableList[][] = new String[ProfessorList.size()][6];
         for (int i = 0; i < ProfessorList.size(); i++) {
@@ -171,6 +196,7 @@ public class ProfessorDeleteWindow extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteProfessorButton;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;

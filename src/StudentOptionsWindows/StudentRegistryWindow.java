@@ -174,17 +174,19 @@ public class StudentRegistryWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void returnStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnStudentMouseClicked
         StudentWindow student = new StudentWindow();
         student.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_returnStudentMouseClicked
-
     private void registradorStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registradorStudentButtonActionPerformed
-        Student newStudent =  new Student(entryName.getText(), entryIdentificationCard.getText(), 
-                entryPhone.getText(), entryAddress.getText(), entryEmail.getText(), 
-                entryLastName.getText());
+        String name = entryName.getText();
+        String lastName = entryLastName.getText();
+        String id = entryIdentificationCard.getText();
+        String phone = entryPhone.getText();
+        String address = entryAddress.getText();
+        String email = entryEmail.getText();
+        Student newStudent = new Student(name, lastName, id, address, phone, email);
         StudentList.add(newStudent);
         entryName.setText("");
         entryIdentificationCard.setText("");

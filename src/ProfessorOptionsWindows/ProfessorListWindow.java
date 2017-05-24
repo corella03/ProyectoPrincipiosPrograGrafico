@@ -7,6 +7,10 @@
 package ProfessorOptionsWindows;
 //Imports
 import AdminMenuWindows.ProfessorWindow;
+import static ProfessorOptionsWindows.ProfessorRegistryWindow.ProfessorList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.table.DefaultTableModel;
 /**
  **
  ** @author Luis Alonso Corella Chaves
@@ -16,9 +20,25 @@ public class ProfessorListWindow extends javax.swing.JFrame {
     /**
      * Creates new form ProfessorListWindow
      */
+    String names = "";
     public ProfessorListWindow() {
         initComponents();
         setLocationRelativeTo(null);
+        professorListTable.addMouseListener(new MouseAdapter() 
+        {
+            DefaultTableModel model = new DefaultTableModel();
+            public void mouseClicked(MouseEvent e) 
+            {
+                int i = professorListTable.getSelectedRow();
+                names = (professorListTable.getValueAt(i, 0).toString());
+                String lastNames = (professorListTable.getValueAt(i, 1).toString());
+                String ids = (professorListTable.getValueAt(i, 2).toString());
+                String address = (professorListTable.getValueAt(i, 3).toString());
+                String phones = (professorListTable.getValueAt(i, 4).toString());
+                String emails = (professorListTable.getValueAt(i, 5).toString());
+            }  
+        });
+        shows();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,6 +51,8 @@ public class ProfessorListWindow extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        professorListTable = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         returnProfessor = new javax.swing.JMenu();
 
@@ -38,6 +60,16 @@ public class ProfessorListWindow extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("Lista de Profesores");
+
+        professorListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Apellido", "Cédula", "Dirección", "Teléfono", "Email"
+            }
+        ));
+        jScrollPane2.setViewportView(professorListTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -47,13 +79,16 @@ public class ProfessorListWindow extends javax.swing.JFrame {
                 .addContainerGap(185, Short.MAX_VALUE)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(185, 185, 185))
+            .addComponent(jScrollPane2)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(338, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                .addGap(139, 139, 139))
         );
 
         returnProfessor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/la-flecha-verde-de-la-izquierda-icono-7438-32.png"))); // NOI18N
@@ -84,6 +119,23 @@ public class ProfessorListWindow extends javax.swing.JFrame {
         professor.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_returnProfessorMouseClicked
+    public  void shows() {
+        String tableList[][] = new String[ProfessorList.size()][6];
+        for (int i = 0; i < ProfessorList.size(); i++) {
+            tableList[i][0] = ProfessorList.get(i).getName();
+            tableList[i][1] = ProfessorList.get(i).getLastName();
+            tableList[i][2] = ProfessorList.get(i).getIdentificationCard();
+            tableList[i][3] = ProfessorList.get(i).getAddress();
+            tableList[i][4] = ProfessorList.get(i).getTelephoneNumber();
+            tableList[i][5] = ProfessorList.get(i).getEmail();
+        }
+        professorListTable.setModel(new javax.swing.table.DefaultTableModel(
+                tableList,
+                new String[]{
+                    "Nombre", "Apellido", "Cédula", "Dirección", "Teléfono", "Email"
+                }
+        ));
+    }
     /**
      * @param args the command line arguments
      */
@@ -121,6 +173,8 @@ public class ProfessorListWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable professorListTable;
     private javax.swing.JMenu returnProfessor;
     // End of variables declaration//GEN-END:variables
 }

@@ -176,21 +176,22 @@ public class ProfessorRegistryWindow extends javax.swing.JFrame {
         ProfessorWindow professor = new ProfessorWindow();
         professor.setVisible(true);
         this.setVisible(false);
-        for (int i = 0; i < ProfessorList.size(); i++) {
-            System.out.println(ProfessorList.get(i));
-        }
     }//GEN-LAST:event_returnProfessorMouseClicked
-
     private void registradorProfessorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registradorProfessorButtonActionPerformed
-        Professor newProfessor = new Professor(entryName.getText(), entryLastName.getText(), 
-                entryIdentificationCard.getText(), entryAddress.getText(),entryPhone.getText(), entryEmail.getText());
+        String name = entryName.getText();
+        String lastName = entryLastName.getText();
+        String id = entryIdentificationCard.getText();
+        String phone = entryPhone.getText();
+        String address = entryAddress.getText();
+        String email = entryEmail.getText();
+        Professor newProfessor = new Professor(name, lastName, id, address, phone, email);
         ProfessorList.add(newProfessor);
         entryName.setText("");
         entryLastName.setText("");
         entryIdentificationCard.setText("");
         entryAddress.setText("");
         entryPhone.setText("");
-        entryLastName.setText("");
+        entryEmail.setText("");
     }//GEN-LAST:event_registradorProfessorButtonActionPerformed
     /**
      * @param args the command line arguments

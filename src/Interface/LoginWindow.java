@@ -111,11 +111,8 @@ public class LoginWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void userEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userEntryActionPerformed
-
     }//GEN-LAST:event_userEntryActionPerformed
-
     private void registryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registryButtonActionPerformed
         final String Id = "core";
         final String password = "123";
